@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    BackgroundColor="White"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="com.clemensfoods.attendance.Views.Finish"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="15,15,15,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".75*"/>
+                    <ColumnDefinition Width=".25*"/>
+                </Grid.ColumnDefinitions>
+                <Frame
+                    Grid.Row="0" Grid.Column="0">
+                    <Label Text="Hello Turnipseed, Luke! Hola Turnipseed, Luke! Your current reliability status for the month is" TextColor="Black"/>
+                </Frame>
+                <Frame
+                    CornerRadius="10"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    BackgroundColor="Yellow"
+                    >
+                </Frame>
+            
+            </Grid>
+             <Grid Margin="15,15,15,0">
+                 <Grid.RowDefinitions>
+                     <RowDefinition Height="Auto"/>
+                 </Grid.RowDefinitions>
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width=".4*"/>
+                     <ColumnDefinition Width=".6*"/>
+                 </Grid.ColumnDefinitions>
+                 <Label Grid.Column="0" Text="Event Date" TextColor="Black" VerticalTextAlignment="Center"/>
+                 <Label Grid.Column="1" Text="Event Type" TextColor="Black" VerticalTextAlignment="Center"/>
+             </Grid>  
+            
+             <CollectionView
+                 x:Name="collectionView"
+                 Grid.Row="0"
+                 Grid.ColumnSpan="2"
+                 BackgroundColor="White">
+             </CollectionView>
+            <StackLayout VerticalOptions="End" Margin="15,0,15,15" >
+                <Button Text="End / Fin" Clicked="Finish_Button_Clicked" CornerRadius="15"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
