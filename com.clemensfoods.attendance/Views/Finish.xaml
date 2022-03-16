@@ -5,9 +5,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="com.clemensfoods.attendance.Views.Finish"
     NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Green">#00FF00</Color>
+            <Color x:Key="Yellow">#FFFF00</Color>
+            <Color x:Key="Red">#FF0000</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Grid Margin="15,15,15,0">
+            <Grid Margin="15,30,15,0" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
@@ -17,13 +24,16 @@
                 </Grid.ColumnDefinitions>
                 <Frame
                     Grid.Row="0" Grid.Column="0">
-                    <Label Text="Hello Turnipseed, Luke! Hola Turnipseed, Luke! Your current reliability status for the month is" TextColor="Black"/>
+                    
+                    <Label x:Name="MessageLabel"  TextColor="Black"/>
+                    
                 </Frame>
                 <Frame
                     CornerRadius="10"
                     Grid.Row="0"
                     Grid.Column="1"
-                    BackgroundColor="Yellow"
+                    x:Name="ReliabilityColorBox"
+                    BackgroundColor="{Binding ReliabilityStatus_CurrentMonth}"
                     >
                 </Frame>
             
@@ -36,8 +46,8 @@
                      <ColumnDefinition Width=".4*"/>
                      <ColumnDefinition Width=".6*"/>
                  </Grid.ColumnDefinitions>
-                 <Label Grid.Column="0" Text="Event Date" TextColor="Black" VerticalTextAlignment="Center"/>
-                 <Label Grid.Column="1" Text="Event Type" TextColor="Black" VerticalTextAlignment="Center"/>
+                 <Label Grid.Column="0" Text="Event Date" TextColor="Black" VerticalTextAlignment="Center" FontAttributes="Bold" />
+                <Label Grid.Column="1" Text="Event Type" TextColor="Black" VerticalTextAlignment="Center" FontAttributes="Bold"/>
              </Grid>  
             
              <CollectionView
@@ -45,7 +55,21 @@
                  Grid.Row="0"
                  Grid.ColumnSpan="2"
                  BackgroundColor="White">
-             </CollectionView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid  Margin="15,15,15,0" Padding="15,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".4*"/>
+                                <ColumnDefinition Width=".6*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" 
+                               Text="{Binding AttendanceEventDate}"  />
+                            <Label Grid.Column="1" 
+                               Text="{Binding AttendanceEventType}" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             <StackLayout VerticalOptions="End" Margin="15,0,15,15" >
                 <Button Text="End / Fin" Clicked="Finish_Button_Clicked" CornerRadius="15"/>
             </StackLayout>

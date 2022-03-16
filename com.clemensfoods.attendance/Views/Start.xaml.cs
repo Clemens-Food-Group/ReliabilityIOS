@@ -16,11 +16,11 @@ namespace com.clemensfoods.attendance.Views
         {
             
 
-            var result = new Services.REST().RestService();
+            var result = new Services.REST().RestService(EntryTimeCard);
 
             //if (result != null)
 
-                Navigation.PushAsync(new Finish());
+                Navigation.PushAsync(new Finish(EntryTimeCard));
 
             //else
             //{

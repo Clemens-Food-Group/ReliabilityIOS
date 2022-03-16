@@ -9,7 +9,7 @@ namespace com.clemensfoods.attendance.Models
         public string Plant { get; set; }
         public DateTime AttendanceEventDate { get; set; }
         public string AttendanceEventType { get; set; }
-        public string RelativityStatus_CurrentMonth { get; set; }
+        public string ReliabilityStatus_CurrentMonth { get; set; }
         public string TimeCardID { get; set; }
     }
 }

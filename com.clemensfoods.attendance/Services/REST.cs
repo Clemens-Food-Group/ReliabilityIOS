@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using com.clemensfoods.attendance.Models;
 using Flurl.Http;
+using Xamarin.Forms;
 
 namespace com.clemensfoods.attendance.Services
 {
     public class REST
     {
 
-        public List<AttendanceModel> RestService()
+        public List<AttendanceModel> RestService(Entry TimeCard)
         {
 
             // This line disables SSL verification
             //System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicy) => { return true; };
 
-            using (var client = new FlurlClient("{BASE URL HERE}"))
+            using (var client = new FlurlClient("https://cfgazure.azurewebsites.net/"))
             {
                 try
                 {
                     System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicy) => { return true; };
-                    var result = client.Request("{REQUEST HERE 'request/service' }")
-                        //.SetQueryParam()
+                    var result = client.Request("Reliability/GetCurrentMonthReliability")
+                        .SetQueryParam("TimeCardID",TimeCard.Text)
                         //.SetQueryParam()
                         .GetJsonAsync<List<AttendanceModel>>().Result;
 
