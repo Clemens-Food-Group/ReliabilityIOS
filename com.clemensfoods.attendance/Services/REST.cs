@@ -16,7 +16,7 @@ namespace com.clemensfoods.attendance.Services
             // This line disables SSL verification
             //System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicy) => { return true; };
 
-            using (var client = new FlurlClient("https://cfgazure.azurewebsites.net/"))
+            using (var client = new FlurlClient("https://cfgazure.azurewebsites.net"))
             {
                 try
                 {

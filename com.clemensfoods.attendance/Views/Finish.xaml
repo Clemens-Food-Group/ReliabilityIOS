@@ -71,7 +71,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <StackLayout VerticalOptions="End" Margin="15,0,15,15" >
-                <Button Text="End / Fin" Clicked="Finish_Button_Clicked" CornerRadius="15"/>
+                <Button x:Name="EndButton" Text="End / Fin" Clicked="Finish_Button_Clicked" CornerRadius="15"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -11,7 +11,11 @@
                 Placeholder="Scan Your Badge - Escanea tu credencial"
                 VerticalOptions="Center"
                 VerticalTextAlignment="Center"
-                HorizontalTextAlignment="Center"/>
+                HorizontalTextAlignment="Center"
+                IsPassword="True"
+                TextChanged="EntryTimeCard_TextChanged"
+                Text=""
+                />
             <Button Text="Enter - Entrar" CornerRadius="15" Clicked="Enter_Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
