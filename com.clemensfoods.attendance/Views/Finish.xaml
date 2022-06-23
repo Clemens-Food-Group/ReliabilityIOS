@@ -28,6 +28,7 @@
                     <Label x:Name="MessageLabel"  TextColor="Black"/>
                     
                 </Frame>
+                
                 <Frame
                     CornerRadius="10"
                     Grid.Row="0"

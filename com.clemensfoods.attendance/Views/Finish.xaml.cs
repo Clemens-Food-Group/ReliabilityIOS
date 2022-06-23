@@ -15,11 +15,10 @@ namespace com.clemensfoods.attendance.Views
             //List<AttendanceModel> Data = new Services.REST().RestService(EntryTimeCard);
 
             string TMName = Data[0].TM_Name.Trim();
-            string MessageText = $"Hello {TMName}! Hola {TMName}!@Your current reliability status for the month is @ Su estado de confiabilidad actual para el mes es".Replace("@", System.Environment.NewLine) ;
+            string StatusColor = Data[0].ReliabilityStatus_CurrentMonth;
+            string StatusColorSpanish = Data[0].ReliabilityStatus_CurrentMonth == "Green" ? "Verde" : Data[0].ReliabilityStatus_CurrentMonth == "Yellow" ? "Amarillo" : "Rojo";
+            string MessageText = $"Hello {TMName}! Hola {TMName}!@Your current reliability status for the month is {StatusColor}  @ Su estado de confiabilidad actual para el mes es  {StatusColorSpanish}".Replace("@", System.Environment.NewLine) ;
             MessageLabel.Text = MessageText;
-
- 
-            ReliabilityColorBox.BackgroundColor = Data[0].ReliabilityStatus_CurrentMonth == "Green" ? Color.Green : Data[0].ReliabilityStatus_CurrentMonth == "Yellow" ? Color.Yellow : Color.Red;
 
 
 
