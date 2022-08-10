@@ -11,5 +11,6 @@ namespace com.clemensfoods.attendance.Models
         public string AttendanceEventType { get; set; }
         public string ReliabilityStatus_CurrentMonth { get; set; }
         public string TimeCardID { get; set; }
+        public string PerfectAttendanceFlag { get; set; }
     }
 }
