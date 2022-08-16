@@ -20,7 +20,10 @@ namespace com.clemensfoods.attendance.Views
             string MessageText = $"Hello {TMName}! Hola {TMName}!@Your current reliability status for the month is {StatusColor}  @ Su estado de confiabilidad actual para el mes es  {StatusColorSpanish}".Replace("@", System.Environment.NewLine) ;
             MessageLabel.Text = MessageText;
 
-            string Flag = Data[0].PerfectAttendanceFlag;
+            ReliabilityColorBox.BackgroundColor = Data[0].ReliabilityStatus_CurrentMonth == "Green" ? Color.Green : Data[0].ReliabilityStatus_CurrentMonth == "Yellow" ? Color.Yellow : Color.Red;
+
+            string Flag = Data[0].PerfectAttendanceFlag; 
+
             if (Flag == "1")
             {
                 DisplayAlert("Thank You !", "Thank you for your perfect monthly attendance - Gracias por su perfecta asistencia mensual", "OK");
@@ -31,7 +34,7 @@ namespace com.clemensfoods.attendance.Views
             }
             else
             {
-                
+
             }
 
             collectionView.ItemsSource = Data;
