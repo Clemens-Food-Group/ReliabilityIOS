@@ -15,14 +15,15 @@ namespace com.clemensfoods.attendance.Services
 
             // This line disables SSL verification
             //System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicy) => { return true; };
+            string url = string.Format("https://cfgazure.azurewebsites.net/Reliability/GetCurrentMonthReliability?TimeCardID={0}", TimeCard.Text);
 
-            using (var client = new FlurlClient("https://cfgazure.azurewebsites.net"))
+            using (var client = new FlurlClient(url))
             {
                 try
                 {
                     System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicy) => { return true; };
-                    var result = client.Request("Reliability/GetCurrentMonthReliability")
-                        .SetQueryParam("TimeCardID",TimeCard.Text)
+                    var result = client.Request()
+                        //.SetQueryParam("TimeCardID",TimeCard.Text)
                         //.SetQueryParam()
                         .GetJsonAsync<List<AttendanceModel>>().Result;
 
