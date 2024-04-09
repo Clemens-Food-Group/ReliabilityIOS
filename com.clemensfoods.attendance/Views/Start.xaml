@@ -4,19 +4,25 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="com.clemensfoods.attendance.Views.Start"
     NavigationPage.HasNavigationBar="False">
-    <ContentPage.Content>
-        <StackLayout Margin="20" VerticalOptions="Center">
-            <Entry
-                x:Name="EntryTimeCard"
-                Placeholder="Scan Your Badge - Escanea tu credencial"
-                VerticalOptions="Center"
-                VerticalTextAlignment="Center"
-                HorizontalTextAlignment="Center"
-                IsPassword="True"
-                TextChanged="EntryTimeCard_TextChanged"
-                Text=""
-                />
-            <Button Text="Enter - Entrar" CornerRadius="15" Clicked="Enter_Button_Clicked"/>
-        </StackLayout>
-    </ContentPage.Content>
+
+
+    <Grid>
+        <BoxView>
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="Transparent"  Offset=".5"/>
+                    <GradientStop Color="#8F993D" Offset=".9"/>
+                    <GradientStop Color="#8F993D" Offset="1"/>
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        <Grid RowDefinitions="Auto, Auto, Auto" HeightRequest="650" Margin="30,30,30,100" RowSpacing="40" VerticalOptions="End">
+            <StackLayout>
+                <Image Source="CFG Logo - Transparent - 2020.png" />
+            </StackLayout>
+            <StackLayout Grid.Row="3" HorizontalOptions="Center" Orientation="Horizontal" Spacing="20" VerticalOptions="End">
+                <Entry x:Name="EntryTimeCard" Text="Please Scan Badge" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextChanged="EntryTimeCard_TextChanged" IsPassword="True" WidthRequest="500" Placeholder="Scan Badge To Check Reliability"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
 </ContentPage>

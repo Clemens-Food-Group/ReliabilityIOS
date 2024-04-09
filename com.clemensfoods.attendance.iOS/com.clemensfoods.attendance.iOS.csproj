@@ -27,8 +27,9 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer</CodesignKey>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignKey>iPhone Distribution: Pleasant Valley Packing LLC (GHAUJVKTR6)</CodesignKey>
+    <CodesignProvision>
+    </CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -38,8 +39,8 @@
     <WarningLevel>4</WarningLevel>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
-    <CodesignKey>Apple Distribution: Pleasant Valley Packing LLC (GHAUJVKTR6)</CodesignKey>
-    <CodesignProvision>ProfileDistr</CodesignProvision>
+    <CodesignKey>iPhone Distribution: Pleasant Valley Packing LLC (GHAUJVKTR6)</CodesignKey>
+    <CodesignProvision>Reliability Profile</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
@@ -64,7 +65,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>Apple Distribution: Pleasant Valley Packing LLC (GHAUJVKTR6)</CodesignKey>
+    <CodesignKey>iPhone Distribution: Pleasant Valley Packing LLC (GHAUJVKTR6)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>Reliability Profile</CodesignProvision>
     <MtouchFloat32>true</MtouchFloat32>
@@ -186,5 +187,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\LaunchImange.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CFG Logo - Transparent - 2020.png" />
   </ItemGroup>
 </Project>
